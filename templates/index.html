@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% if title:%}
+<title>{{title}}</title>
+{% else %}
+<title>Flask App</title>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content">
+	
+	<h2 class="headline">
+		Task Master
+	</h2>
+	{% if tasks|length<1: %}
+	<h4 class="headline">There are no task so create one</h4>
+	{% else %}
+	<table class="tasktable">
+		
+		<tr>
+			<th>Task</th>
+			<th>Date</th>
+			<th>Options</th>
+		</tr>
+		{% for task in tasks: %}
+		<tr>
+			<td>{{task.task}}</td>
+			<td>{{task.date_added.date()}}</td>
+			<td>
+				<a href="/delete/{{task.id}}">Delete</a>
+				<a href="/update/{{task.id}}">Update</a>
+			</td>
+		</tr>
+		{% endfor %}
+
+	</table>
+	{% endif %}
+	<form class="add_task" method="POST" action="/">
+		<input type="text" name="content" id="content" style="width:300px;">
+		<input type="submit" name="submit" value="Add Task">
+	</form>
+</div>
+{% endblock %}

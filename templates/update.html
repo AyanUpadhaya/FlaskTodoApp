@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% if title:%}
+<title>{{title}}</title>
+{% else %}
+<title>Flask App</title>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content">
+	
+	<h2 class="headline">
+		Update HTML
+	</h2>
+	<form class="update_task" method="POST" action="/update/{{task.id}}" >
+		<input type="text" name="content" id="content" value="{{task.task}}">
+		<input type="submit" name="submit" value="Update">
+	</form>
+</div>
+{% endblock %}
