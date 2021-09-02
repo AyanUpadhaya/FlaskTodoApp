@@ -1,3 +1,4 @@
+#!usr/bin/python3
 from flask import Flask,render_template,url_for,request, redirect
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy

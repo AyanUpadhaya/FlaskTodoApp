@@ -1,0 +1,32 @@
+Herouku is a cloud service provider that lets us deploy our project online
+
+
+Number 1:
+Download Heoruk Cli
+
+https://devcenter.heroku.com/articles/heroku-cli
+
+Number 2:
+Initialize Terminal in project directory and type
+
+-> git init (Will create an empty git repo)
+-> heroku login (open account in Heroku Cli)
+-> pip install gunicorn
+
+Number 4:
+Create requirements.txt
+-> pip freeze > requirements.txt
+
+Create ProcFile -> touch Procfile
+write down -> web: gunicorn app:app (server will run the app variable)
+
+Number 5:
+-> git add .
+-> git commit -m "first commit"
+-> heroku create flask-to-do-app
+-> git remote -v
+-> git push heroku master
+
+
+
+
